@@ -17,7 +17,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="scripts/jquery.bxslider.js"></script>
-
+<script src="validare.js"</script>
 <script>
 	$(function(){
 		//document.getElementById("login_heading").innerHTML = "Please log in";
@@ -38,7 +38,6 @@
 		}
 	});
 </script>
-
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
 </head>
@@ -77,8 +76,10 @@
 				<label for="login_password">Password:</label>
 				<input type="password" id="login_password" name="pass">
 			</fieldset>
-			
-			<button type="submit">Login</button>
+	
+	<button onclick="isPasswordValid(login_password)">Login</button>
+
+
 		</form>
 	</div><!-- container -->
 

@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="styles/curs2.css" type="text/css">
 </head>
 <body>
-  <?php include('lib/header.php'); ?>
+<?php include('lib/header.php'); ?>
 
 <!-- content -->
 <div class="wrapper row2">

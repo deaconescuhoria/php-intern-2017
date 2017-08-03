@@ -15,22 +15,7 @@
 <!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
 </head>
 <body>
-<div class="wrapper row1">
-  <header id="header" class="clear">
-    <div id="hgroup">
-      <h1><a href="#">Roweb</a></h1>
-      <h2>Internship Program</h2>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/products.html">Products</a></li>
-        <li><a href="/add-product.html">Add product</a></li>
-        <li><a href="/login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-</div>
+<?php include('lib/header.php'); ?>
 <!-- content -->
 <div class="wrapper row2">
   <div id="container" class="clear">
@@ -53,12 +38,7 @@
 	</div><!-- container -->
 </div>
 <!-- footer -->
-<div class="wrapper row3">
-  <footer id="footer" class="clear">
-    <p class="fl_left">Copyright &copy; 2012 - All Rights Reserved - <a href="#">Domain Name</a></p>
-    <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
-  </footer>
-</div>
+<?php include('lib/footer.php'); ?>
 <script>
 $(function(){
 	$('.bxslider').bxSlider({

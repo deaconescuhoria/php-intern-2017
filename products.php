@@ -1,3 +1,21 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "eshop";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM Products";
+$result = $conn->query($sql);
+$result = mysqli_fetch_all($result,MYSQLI_ASSOC);
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -42,61 +60,16 @@
 		</ul>
 
 		<div id="tab-1" class="tab-content current">
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
+			<?php foreach($result as $res) { ?>
+				<div class="product">
+					<img src="images/<?php echo $res['image'] ?>" alt="">
 				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product last">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			
-			<div style="clear:both;"></div>
-			
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div class="product last">
-				<img src="images/demo/80x80.gif" alt="">
-				<div style="clear:both;"></div>
-				<span> The product title </span>
-			</div>
-			<div style="clear:both;"></div>
-		</div>
+					<span><?php echo $res['id'] ?></span>
+					<span><?php echo $res['name'] ?></span>
+					<span><?php echo $res['details'] ?></span>
+					<span><?php echo $res['price'] ?></span>
+				</div>
+      <?php } ?>
 		<div id="tab-2" class="tab-content">
 			 <div class="product">
 

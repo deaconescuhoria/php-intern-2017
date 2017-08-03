@@ -23,10 +23,11 @@
     
 	<div class="container">
 
-	<form action="index.html" method="post">
+	<form id='add_prod' action="add_prod.php" method="post" enctype="multipart/form-data">
       
         <h1>Add a product</h1>
-        
+	
+
         <fieldset>
           <legend>Product Details</legend>
           <label for="name"> Product Name:</label>
@@ -34,6 +35,10 @@
 		  
 		  <label for="decription"> Description:</label>
 		  <textarea id="decription" name="product_name"></textarea>
+		  
+		  <input type="file" id="image" name="product_image"><br><br>
+		  <label for="price">Price:</label>
+		  <input type="text" id="price" name="product_price"><br><br>
    
           <label>Favorite:</label>
           <input type="radio" id="favorite-yes" value="favorite" name="favorite_product"><label for="favorite-yes" class="light">Yes</label><br>
@@ -94,6 +99,20 @@ $(function(){
 		$('.custom-menu').find('.active').removeClass('active');
 		$(this).addClass('active');
 	});
+});
+
+$('#add_prod_form').on('submit', function(e) {
+  e.preventDefault();
+  var name = $('#name').val();
+  var details = $('#details').val();
+  var price = $('#price').val();
+  var image = $('#image').val();
+
+  if(name.length <= 0 || details.length <= 0 || price.length <= 0 || image.length <= 0) {
+    alert('Completati toate campurile');
+    return;
+  }
+    $('#add_prod_form')[0].submit();
 });
 </script>
 </body>
